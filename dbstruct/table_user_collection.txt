@@ -1,3 +1,0 @@
-user,int(11),YES,,,
-collection,int(11),YES,,,
-request_feedback,int(11),NO,,0,

@@ -1,3 +1,0 @@
-ip,varchar(40),YES,PRI,,
-tries,int(11),YES,,0,
-last_try,datetime,YES,MUL,,

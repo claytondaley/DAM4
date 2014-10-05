@@ -1,3 +1,0 @@
-resource,int(11),NO,MUL,,
-user,int(11),NO,MUL,,
-expiry,datetime,YES,MUL,,

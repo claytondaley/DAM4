@@ -1,3 +1,0 @@
-user,int(11),NO,,0,
-rating,int(11),NO,,0,
-ref,int(11),NO,MUL,0,

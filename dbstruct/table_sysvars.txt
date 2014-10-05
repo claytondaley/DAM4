@@ -1,2 +1,0 @@
-name,varchar(50),YES,,,
-value,text,YES,,,

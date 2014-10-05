@@ -1,3 +1,0 @@
-code,varchar(50),YES,,,
-percent,int,YES,,,
-expires,date,YES,,,

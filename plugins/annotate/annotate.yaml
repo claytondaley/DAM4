@@ -1,5 +1,0 @@
-name    : annotate
-author  : Tom Gleason
-version : 1
-desc    : Enables creation of jquery image annotations
-config_url: /plugins/annotate/pages/setup.php

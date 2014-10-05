@@ -1,2 +1,0 @@
-collection,int(11),NO,MUL,,
-keyword,int(11),NO,MUL,,

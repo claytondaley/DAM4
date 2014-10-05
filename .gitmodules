@@ -1,0 +1,3 @@
+[submodule "module/Legacy"]
+	path = module/Legacy
+	url = https://github.com/claytondaley/LegacyRS

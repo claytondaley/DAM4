@@ -1,1 +1,11 @@
-Please see the "documentation/licenses" folder for all applicable licenses.
+Copyright (c) 2014, Clayton Daley III
+All rights reserved.
+
+Copies of relevant licenses can be found in the licenses directory. The following
+license apply to various aspects of this distribution:
+
+DAM4 - The composite application is distributed under GPL version 3.0+
+LegacyRS - The LegacyRS module is distributed under GPL version 3.0+.  License for
+  dependencies may be found in the LICENSE file contained therein.
+Zend Framework - The Zend Framework and Zend Skeleton Application is distributed under
+  the Zend (New BSD) License

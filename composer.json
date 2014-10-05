@@ -1,0 +1,17 @@
+{
+    "name": "claytondaley/dam4",
+    "description": "zf2 enhanced digital asset management framework",
+    "license": "GPL-3.0+",
+    "keywords": ["zf2","dam","dms"],
+	"support": {
+        "issues": "https://github.com/claytondaley/dam4/issues",
+        "source": "https://github.com/claytondaley/dam4"
+    },
+    "homepage": "https://github.com/claytondaley/dam4",
+	"require": {
+        "php": ">=5.3.3",
+        "zendframework/zendframework": "2.3.*"
+    }
+}
+
+
