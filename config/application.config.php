@@ -1,9 +1,18 @@
 <?php
 return array(
     // This should be an array of module namespaces used in the application.
+    // Prioritization is LIFO
     'modules' => array(
+        'ZendDeveloperTools',
+        'DoctrineModule',
+        'DoctrineORMModule',
+        # LegacyRS includes a wildcard router so no page-delivering modules may be placed after it
+        'LegacyRS',
+        # Place additional modules here
         'Application',
-        'Legacy',
+        # Settings will verify database availability and must be left in the first position since all modules depend on
+        # the database
+        'Settings',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

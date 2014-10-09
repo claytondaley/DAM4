@@ -10,8 +10,10 @@
     "homepage": "https://github.com/claytondaley/dam4",
 	"require": {
         "php": ">=5.3.3",
-        "zendframework/zendframework": "2.3.*"
+        "zendframework/zendframework": "2.3.*",
+        "doctrine/common": ">=2.1",
+		"doctrine/doctrine-orm-module": "0.7.*",
+		"zf-commons/zfc-user": "dev-master",
+        "zendframework/zend-developer-tools": "dev-master"
     }
 }
-
-

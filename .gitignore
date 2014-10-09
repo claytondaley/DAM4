@@ -1,3 +1,4 @@
+!.gitignore
 nbproject
 ._*
 .~lock.*
@@ -8,3 +9,7 @@ nbproject
 .settings
 composer.lock
 vendor/bin
+vendor/doctrine
+vendor/zendframework
+vendor/zf-commons
+vendor/symfony
