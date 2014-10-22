@@ -10,6 +10,7 @@ return array(
         'LegacyRS',
         # Place additional modules here
         'Application',
+        'DaleyPiwik',
         # Settings will verify database availability and must be left in the first position since all modules depend on
         # the database
         'Settings',
