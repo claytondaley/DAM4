@@ -3,12 +3,13 @@ DAM4
 
 Introduction
 ------------
-DAM4 provides a uniquely powerful Digital Asset Management framework by wrapping the legacy ResourceSpace codebase in a Zend2 Framework wrapper layer. ResourceSpaace is a feature-right DAM tool, but the procedural codebase makes it difficult to extend using off-the-shelf modules. DAM4's wrapper layer makes it possible to extend ResourceSpace with OO modules available through the Zend2 Framework. 
+DAM4 provides a uniquely powerful Digital Asset Management (DAM) framework by wrapping the legacy ResourceSpace codebase in a Zend2 Framework wrapper layer. ResourceSpaace is a feature-rich DAM tool, but the procedural codebase makes it difficult to extend using off-the-shelf modules. DAM4's wrapper layer makes it possible to extend ResourceSpace with the many OO modules available through the Zend2 Framework.
 
 Initial priorities include:
 
+ - (DONE) Provide a transparent experience for ResourceSpace despite the ZF2 wrapper layer.
+ - (DONE) Pageview Tracking - Capture legacy page requests as they pass through the Zend layer, getting around limitations in the legacy RS code arising from AJAX calls.
  - Authentication - Bridge Zend\Authentication to the RS codebase so Zend modules can be used for site-wide authentication.
- - Pageview Tracking - Capture legacy page requests as they pass through the Zend layer, getting around limitations in the legacy RS code arising from AJAX calls.
  - Enhanced Settings Experience - Many (MANY!) of the settings in Legacy RS are set using global variables in a config.php file. DAM4 will provide a single, GUI-based setting experience combining settings from the database and the config.php file.
 
 Installation
@@ -17,14 +18,20 @@ Installation
 Due to its mixed heritage, DAM4 requires a combination of git and Composer:
 
     git clone git://github.com/claytondaley/DAM4.git --recursive
-    cd ZendSkeletonApplication
+    cd DAM4
     curl -s https://getcomposer.org/installer | php --
     php composer.phar install
 
-Both LegacyRS and the ResourceSpace codebase are obtained as submodules of DAM4.
+Several key components (including the ResourceSpace codebase) are obtained as submodules of DAM4 so you must also run:
+
+    git submodule update --recursive --init
 
 Web Server Setup
 ----------------
+
+### Dreamhost, GoDaddy, and other retail providers
+
+Setup a website (domain or subdomain) using the /public folder as the root of your website
 
 ### PHP CLI Server
 
