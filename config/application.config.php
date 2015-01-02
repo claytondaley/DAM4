@@ -14,6 +14,10 @@ return array(
         # Settings will verify database availability and must be left in the first position since all modules depend on
         # the database
         'Settings',
+        # Authentication using ZfcUser
+        'ZfcBase',
+        'ZfcUser',
+        'ZfcUserDoctrineORM',
     ),
 
     // These are various options for the listeners attached to the ModuleManager

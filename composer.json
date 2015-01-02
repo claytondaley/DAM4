@@ -11,9 +11,14 @@
 	"require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.3.*",
+        "zendframework/zendservice-recaptcha": "dev-master",
+        "zf-commons/zfc-user": ">=1.0.0",
         "doctrine/common": ">=2.1",
 		"doctrine/doctrine-orm-module": "0.7.*",
-		"zf-commons/zfc-user": "dev-master",
-        "zendframework/zend-developer-tools": "dev-master"
+        "zendframework/zend-developer-tools": "dev-master",
+        "bjyoungblood/bjy-profiler": "dev-master",
+        "zf-commons/zfc-user-doctrine-orm": "dev-master",
+        "zf-commons/zfc-admin": "dev-master",
+        "bjyoungblood/bjy-authorize": "dev-master"
     }
 }

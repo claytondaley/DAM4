@@ -8,8 +8,10 @@ nbproject
 .project
 .settings
 composer.lock
+vendor
 vendor/bin
 vendor/doctrine
 vendor/zendframework
 vendor/zf-commons
 vendor/symfony
+composer.phar
