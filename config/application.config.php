@@ -18,6 +18,11 @@ return array(
         'ZfcBase',
         'ZfcUser',
         'ZfcUserDoctrineORM',
+        # User adminstration in ZfcAdmin
+        'ZfcAdmin',
+        'ZfcUserAdmin',
+        # Authentication to secure other modules
+        'ZfcRbac',
     ),
 
     // These are various options for the listeners attached to the ModuleManager
