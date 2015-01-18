@@ -8,7 +8,13 @@
         "source": "https://github.com/claytondaley/dam4"
     },
     "homepage": "https://github.com/claytondaley/dam4",
-	"require": {
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/claytondaley/daleypiwik"
+        }
+    ],
+    "require": {
         "php": ">=5.3.3",
         "zendframework/zendframework": "2.3.*",
         "zendframework/zendservice-recaptcha": "dev-master",
