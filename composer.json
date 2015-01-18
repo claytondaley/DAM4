@@ -19,6 +19,7 @@
         "bjyoungblood/bjy-profiler": "dev-master",
         "zf-commons/zfc-user-doctrine-orm": "dev-master",
         "zf-commons/zfc-admin": "dev-master",
-        "bjyoungblood/bjy-authorize": "dev-master"
+        "bjyoungblood/bjy-authorize": "dev-master",
+        "piwik/piwik-php-tracker": "dev-master"
     }
 }

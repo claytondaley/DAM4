@@ -8,6 +8,7 @@ nbproject
 .project
 .settings
 composer.lock
+composer.phar
 vendor
 vendor/bin
 vendor/doctrine
