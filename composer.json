@@ -1,59 +1,78 @@
 {
-    "name": "claytondaley/dam4",
-    "description": "zf2 enhanced digital asset management framework",
-    "license": "GPL-3.0+",
-    "keywords": ["zf2","dam","dms"],
-	"support": {
-        "issues": "https://github.com/claytondaley/dam4/issues",
-        "source": "https://github.com/claytondaley/dam4"
-    },
-    "homepage": "https://github.com/claytondaley/dam4",
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/claytondaley/zf2"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/claytondaley/daleypiwik"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/claytondaley/Component_ZendForm"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/claytondaley/ZendTable"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/claytondaley/ZfcUser"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/claytondaley/ZfcUserAdmin"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/vocjunior/doctrine2-nestedset"
+  "name": "claytondaley/dam4",
+  "description": "zf2 enhanced digital asset management framework",
+  "license": "GPL-3.0+",
+  "keywords": ["zf2","dam","dms"],
+  "support": {
+    "issues": "https://github.com/claytondaley/dam4/issues",
+    "source": "https://github.com/claytondaley/dam4"
+  },
+  "homepage": "https://github.com/claytondaley/dam4",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "resourcespace/resourcespace",
+        "version": "master",
+        "source": {
+          "url": "git://github.com/svn2github/resourcespace",
+          "type": "git",
+          "reference": "master"
         }
-    ],
-    "require": {
-        "php": ">=5.3.3",
-        "zendframework/zendframework": "2.3.*-dev",
-        "claytondaley/zend-table": "2.3.*-dev",
-        "zf-commons/zfc-user": "dev-table-1.x as 1.x-dev",
-        "danielss89/zfc-user-admin": "dev-table",
-        "zf-commons/zfc-admin": "dev-master",
-        "zf-commons/zfc-rbac": "dev-master",
-        "zf-commons/zfc-user-doctrine-orm": "dev-master",
-        "doctrine/common": ">=2.1",
-        "doctrine/doctrine-orm-module": "0.7.*",
-        "vocjunior/doctrine2-nestedset": "dev-master",
-        "zendframework/zend-developer-tools": "dev-master",
-        "zendframework/zendservice-recaptcha": "dev-master",
-        "piwik/piwik-php-tracker": "dev-master"
+      }
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/claytondaley/zf2"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/claytondaley/LegacyRS.git"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/claytondaley/daleypiwik"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/claytondaley/Component_ZendForm"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/claytondaley/ZendTable"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/claytondaley/ZfcUser"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/claytondaley/ZfcUserAdmin"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/vocjunior/doctrine2-nestedset"
     }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "zendframework/zendframework": "2.3.*-dev",
+    "claytondaley/zend-table": "2.3.*-dev",
+    "zf-commons/zfc-user": "dev-table-1.x as 1.x-dev",
+    "danielss89/zfc-user-admin": "dev-table",
+    "zf-commons/zfc-admin": "dev-master",
+    "zf-commons/zfc-rbac": "dev-master",
+    "zf-commons/zfc-user-doctrine-orm": "dev-master",
+    "doctrine/common": ">=2.1",
+    "doctrine/doctrine-orm-module": "0.7.*",
+    "vocjunior/doctrine2-nestedset": "dev-master",
+    "zendframework/zend-developer-tools": "dev-master",
+    "zendframework/zendservice-recaptcha": "dev-master",
+    "piwik/piwik-php-tracker": "dev-master",
+    "claytondaley/piwiktracker": "dev-master",
+    "claytondaley/legacyrs": "dev-zfcadmin",
+    "resourcespace/resourcespace": "dev-master"
+  }
 }

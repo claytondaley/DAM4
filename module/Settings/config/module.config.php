@@ -17,20 +17,6 @@
  */
 
 return array(
-    'doctrine' => array(
-        'driver' => array(
-            'legacy_rs_entities' => array(
-                'class' =>'Doctrine\ORM\Mapping\Driver\AnnotationDriver',
-                'cache' => 'array',
-                'paths' => array(__DIR__ . '/../../LegacyRS/src/LegacyRS/Entity')
-            ),
-            'orm_default' => array(
-                'drivers' => array(
-                    'LegacyRS\Entity' => 'legacy_rs_entities'
-                )
-            )
-        )
-    ),
     'controllers' => array(
         'invokables' => array(
             'Settings\Controller\Settings' => 'Settings\Controller\SettingsController',

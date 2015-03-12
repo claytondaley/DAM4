@@ -9,10 +9,9 @@ return array(
         # LegacyRS includes a wildcard router so no page-delivering modules may be placed after it
         'LegacyRS',
         # Place additional modules here
-        'Application',
+        'DAM4',
         'DaleyPiwik',
-        # Settings will verify database availability and must be left in the first position since all modules depend on
-        # the database
+        # Setting Screen
         'Settings',
         # Authentication using ZfcUser
         'ZfcBase',

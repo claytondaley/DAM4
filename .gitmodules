@@ -1,6 +1,0 @@
-[submodule "module/LegacyRS"]
-	path = module/LegacyRS
-	url = https://github.com/claytondaley/LegacyRS
-[submodule "DaleyPiwik"]
-	path = module/DaleyPiwik
-	url = https://github.com/claytondaley/DaleyPiwik

@@ -7,7 +7,7 @@
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Application;
+namespace DAM4;
 
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
@@ -19,6 +19,18 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+
+        // Integrate ZfcUser into legacy code by linking to Events
+        $sm = $e->getApplication()->getServiceManager();
+        $sharedEvents = $e->getApplication()->getEventManager()->getSharedManager();
+        $sm->get('DAM4\Listener\ZfcUserListener')->attachShared($sharedEvents);
+        $sm->get('DAM4\Listener\MvcEventListener')->attachShared($sharedEvents);
+
+        // Attach ZfcRbac redirect strategy
+        $t = $e->getTarget();
+        $t->getEventManager()->attach(
+            $t->getServiceManager()->get('ZfcRbac\View\Strategy\RedirectStrategy')
+        );
     }
 
     public function getConfig()
