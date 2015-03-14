@@ -8,6 +8,7 @@
 
 namespace DAM4\Controller;
 
+use Zend\Http\Response;
 use Zend\Mvc\Controller\AbstractActionController;
 
 class RedirectController extends AbstractActionController
@@ -22,12 +23,29 @@ class RedirectController extends AbstractActionController
 
         // add redirect query if the route is login
         $query = array();
-        if ($route == 'zfcuser/login') {
-            $query['redirect'] = $this->getRequest()->getUri();
-        }
 
         if ($this->getRequest()->getQuery('ajax', false) === "true") {
-            $query['ajax'] = "true";
+            if ($route == 'zfcuser/logout') {
+                // bust ajax
+                /** @var Response $response */
+                $response = $this->getResponse();
+                $response->setStatusCode(Response::STATUS_CODE_200);
+                $response->setContent('<script type="text/javascript">top.location.href="' .
+                    $this->url()->fromRoute('zfcuser/logout') . '";</script>');
+                return $response;
+            } else {
+                // preserve ajax
+                $query['ajax'] = "true";
+            }
+        }
+
+        if ($route == 'zfcuser/login') {
+            //preserve redirect
+            if (!$this->getRequest()->getQuery('redirect', false) === null) {
+                $query['redirect'] = $this->getRequest()->getQuery('redirect');
+            } else {
+                $query['redirect'] = $this->getRequest()->getUri()->getPath();
+            }
         }
 
         // move username from ref to userId if route is user (admin) edit

@@ -11,6 +11,7 @@ namespace DAM4\Listener;
 use Zend\EventManager\SharedEventManagerInterface;
 use Zend\EventManager\SharedListenerAggregateInterface;
 use Zend\Mvc\MvcEvent;
+use Zend\Mvc\Router\RouteMatch;
 
 class MvcEventListener implements SharedListenerAggregateInterface
 {
@@ -27,7 +28,12 @@ class MvcEventListener implements SharedListenerAggregateInterface
      */
     public function attachShared(SharedEventManagerInterface $sharedManager)
     {
+        // If the url includes `ajax=true`, we need to prevent the standard layout from rendering.
         $this->listeners[] = $sharedManager->attach('Zend\Stdlib\DispatchableInterface', MvcEvent::EVENT_DISPATCH, array($this, 'ajaxLayout'));
+        // If the "user" cookie is not set, the user will not show up as authenticted into the legacy app.  This cookie
+        // is set during login so the easiest thing to do is to log them out of the ZF2 auth layer and force them to
+        // log back in.
+        $this->listeners[] = $sharedManager->attach('Zend\Mvc\Application', MvcEvent::EVENT_ROUTE, array($this, 'noCookieLogout'));
     }
 
     /**
@@ -45,10 +51,7 @@ class MvcEventListener implements SharedListenerAggregateInterface
     }
 
     /**
-     * To provide the login state to the legacy applicaiton, we need to store a token in both the cookies (as 'user')
-     * and the database.  This event handler ensures that a cookie is set if a user is logged in successfully. We need
-     * to do this now to make sure it's available for a subsequent page load. For efficiency and simplicity, we defer
-     * storing the token in the database until a legacy page is actually being loaded
+     * If the application request a URL with `ajax=true`, we need to hide the standard layout (menu, etc.).
      *
      * @param \Zend\Mvc\MvcEvent $e
      */
@@ -58,6 +61,30 @@ class MvcEventListener implements SharedListenerAggregateInterface
             // Set the layout template
             $viewModel = $e->getViewModel();
             $viewModel->setTemplate('layout/ajax');
+        }
+    }
+
+    /**
+     * Verify that the cookie is still in place and force the user to log back in if it is not.
+     *
+     * @param \Zend\Mvc\MvcEvent $e
+     */
+    public function noCookieLogout(\Zend\Mvc\MvcEvent $e)
+    {
+        if ($e->getRouteMatch()->getMatchedRouteName() == 'legacyrs' ||
+            $e->getRouteMatch()->getMatchedRouteName() == 'wildcard')
+        {
+            # Check for auth cookie and redirect to logout if it doesn't exist
+            if ($e->getRequest()->getCookie()->user === null) {
+                $e->setRouteMatch(
+                    new RouteMatch(array(
+                        'controller'    => 'DAM4\Controller\Redirect', // Guards don't currently support FQN
+                        'action'        => 'redirect',
+                        'route'         => 'zfcuser/logout'
+                    ))
+                );
+                $e->getRouteMatch()->setMatchedRouteName('zfcuser/logout');
+            }
         }
     }
 }

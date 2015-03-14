@@ -5,11 +5,5 @@ Copies of relevant licenses can be found in the licenses directory. The followin
 license apply to various aspects of this distribution.  Additional licenses for 
 dependencies may be linked from the root of each component:
 
-GPL version 3.0+:
- - DAM4, the composite application
- - LegacyRS module
- 
-Zend (New BSD) License:
- - Zend Framework
- - Zend Skeleton Application
- - ZfcUser module
+ - The combined DAM4 application is distributed under GPL version 3.0+:
+ - Files from the Zend Skeleton Application are included under the Zend License
