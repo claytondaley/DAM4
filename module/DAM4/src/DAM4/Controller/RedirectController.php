@@ -48,7 +48,7 @@ class RedirectController extends AbstractActionController
             }
         }
 
-        // move username from ref to userId if route is user (admin) edit
+        // move username from ref to userId if we're hijacking the route to user (admin) edit
         $params = array();
         if ($route == 'zfcadmin/zfcuseradmin/edit') {
             $params['userId'] = $this->params()->fromQuery('ref');

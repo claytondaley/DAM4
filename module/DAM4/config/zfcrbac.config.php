@@ -52,7 +52,7 @@ return array (
             ),
         ),
     ),
-/*
+
     'redirect_strategy' => array(
         'redirect_when_connected'        => false,
         'redirect_to_route_connected'    => 'home',
@@ -60,5 +60,5 @@ return array (
         'append_previous_uri'            => true,
         'previous_uri_query_key'         => 'redirect'
     ),
-*/
+
 );
