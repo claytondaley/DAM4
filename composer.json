@@ -25,19 +25,11 @@
     },
     {
       "type": "vcs",
-      "url": "https://github.com/claytondaley/zf2"
-    },
-    {
-      "type": "vcs",
       "url": "https://github.com/claytondaley/LegacyRS.git"
     },
     {
       "type": "vcs",
       "url": "https://github.com/claytondaley/daleypiwik"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/claytondaley/Component_ZendForm"
     },
     {
       "type": "vcs",
@@ -58,8 +50,7 @@
   ],
   "require": {
     "php": ">=5.3.3",
-    "zendframework/zendframework": "2.3.*-dev",
-    "claytondaley/zend-table": "2.3.*-dev",
+    "zendframework/zendframework": "dev-master",
     "zf-commons/zfc-user": "dev-table-1.x as 1.x-dev",
     "danielss89/zfc-user-admin": "dev-table",
     "zf-commons/zfc-admin": "dev-master",
@@ -71,6 +62,7 @@
     "zendframework/zend-developer-tools": "dev-master",
     "zendframework/zendservice-recaptcha": "dev-master",
     "piwik/piwik-php-tracker": "dev-master",
+    "claytondaley/zend-table": "dev-master",
     "claytondaley/piwiktracker": "dev-master",
     "claytondaley/legacyrs": "dev-zfcadmin",
     "resourcespace/resourcespace": "dev-master"
