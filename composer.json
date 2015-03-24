@@ -17,9 +17,9 @@
         "name": "resourcespace/resourcespace",
         "version": "master",
         "source": {
-          "url": "git://github.com/svn2github/resourcespace",
-          "type": "git",
-          "reference": "master"
+          "type": "svn",
+          "url": "http://svn.montala.net/svn/",
+          "reference": "resourcespace"
         }
       }
     },
