@@ -15,11 +15,11 @@
       "type": "package",
       "package": {
         "name": "resourcespace/resourcespace",
-        "version": "master",
+        "version": "6488",
         "source": {
           "type": "svn",
           "url": "http://svn.montala.net/svn/",
-          "reference": "resourcespace"
+          "reference": "resourcespace@6488"
         }
       }
     },
@@ -64,7 +64,6 @@
     "piwik/piwik-php-tracker": "dev-master",
     "claytondaley/zend-table": "dev-master",
     "claytondaley/piwiktracker": "dev-master",
-    "claytondaley/legacyrs": "dev-zfcadmin",
-    "resourcespace/resourcespace": "dev-master"
+    "claytondaley/legacyrs": "master"
   }
 }
