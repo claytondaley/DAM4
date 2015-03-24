@@ -7,13 +7,16 @@ DAM4 provides a uniquely powerful Digital Asset Management (DAM) framework by wr
 
 Initial priorities include:
 
- - (DONE) Provide a transparent experience for ResourceSpace despite the ZF2 wrapper layer.
- - (DONE) Pageview Tracking - Capture legacy page requests as they pass through the Zend layer, getting around limitations in the legacy RS code arising from AJAX calls.  Opportunities for improvement include:
- - (DONE using ZfcAdmin) Authentication - Bridge Zend\Authentication to the RS codebase so Zend modules can be used for site-wide authentication.
- - Enhanced Authentication - Add compatible user admin screens (then hijack legacy URLs)
- - Settings Experience - Many (MANY!) of the settings in Legacy RS are set using global variables in a config.php file. DAM4 will provide a single, GUI-based setting experience combining settings from the database and the config.php file.
- - Enhanced Tracking - Support for tracking geographic search (currently !geo... keyword gets tracked like any search term)
- - Enhanced Tracking - Support for dynamic results in advanced search (currently tracked when user clicks through to the result set)
+ - [x] Provide a transparent experience for ResourceSpace despite the ZF2 wrapper layer.
+ - [x] Pageview Tracking - Capture legacy page requests as they pass through the Zend layer, getting around limitations in the legacy RS code arising from AJAX calls.  Opportunities for improvement include:
+ - [x] (using ZfcUser) Authentication - Bridge Zend\Authentication to the RS codebase so Zend modules can be used for site-wide authentication.
+     - [] Upgrade to ZfcUser 2.x branch (blocked by ZfcUserAdmin dependency)
+     - [] Reset password experience
+ - [x] (using ZfcUserAdmin) Enhanced Authentication - Add compatible user admin screens (then hijack legacy URLs)
+     - [] Upgrade to support ZfcUser 2.x
+ - [] Settings Experience - Many (MANY!) of the settings in Legacy RS are set using global variables in a config.php file. DAM4 will provide a single, GUI-based setting experience combining settings from the database and the config.php file.
+ - [] Enhanced Tracking - Support for tracking geographic search (currently !geo... keyword gets tracked like any search term)
+ - [] Enhanced Tracking - Support for dynamic results in advanced search (currently tracked when user clicks through to the result set)
 
 Installation
 ------------
