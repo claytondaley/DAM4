@@ -33,6 +33,10 @@
     },
     {
       "type": "vcs",
+      "url": "https://github.com/claytondaley/zf2.git"
+    },
+    {
+      "type": "vcs",
       "url": "https://github.com/claytondaley/ZendTable"
     },
     {
@@ -50,7 +54,7 @@
   ],
   "require": {
     "php": ">=5.3.3",
-    "zendframework/zendframework": "dev-master",
+    "zendframework/zendframework": "dev-table as dev-master",
     "zf-commons/zfc-user": "dev-table-1.x as 1.x-dev",
     "danielss89/zfc-user-admin": "dev-table",
     "zf-commons/zfc-admin": "dev-master",
