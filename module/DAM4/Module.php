@@ -25,6 +25,7 @@ class Module
         $sharedEvents = $e->getApplication()->getEventManager()->getSharedManager();
         $sm->get('DAM4\Listener\ZfcUserListener')->attachShared($sharedEvents);
         $sm->get('DAM4\Listener\MvcEventListener')->attachShared($sharedEvents);
+        $sm->get('DAM4\Listener\RbacNavigation')->attachShared($sharedEvents);
 
         // Attach ZfcRbac redirect strategy
         $t = $e->getTarget();

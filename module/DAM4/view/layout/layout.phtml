@@ -3,7 +3,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <?php echo $this->headTitle('ZF2 '. $this->translate('DAM4'))->setSeparator(' - ')->setAutoEscape(false) ?>
+        <?php echo $this->headTitle($this->translate('DAM4'))->setSeparator(' - ')->setAutoEscape(false) ?>
 
         <?php echo $this->headMeta()
             ->appendName('viewport', 'width=device-width, initial-scale=1.0')
@@ -28,20 +28,27 @@
     <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
-            <?php
-            echo $this->navigation('header_left')
-                ->menu()
-                ->setMinDepth(0)
-                ->setMaxDepth(0)
-                ->setUlClass('nav navbar-nav');
-            ?>
-            <?php
-            echo $this->navigation('header_right')
-                ->menu()
-                ->setMinDepth(0)
-                ->setMaxDepth(0)
-                ->setUlClass('nav navbar-nav navbar-right');
-            ?>
+                <div class="navbar-header">
+                    <a class="navbar-brand" style="padding:5px 15px" href="/">
+                        <img class="img-responsive" alt="DAM4" src="/img/logo.png">
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse" style="padding-right: 15px">
+                    <?php
+                    echo $this->navigation('header_left')
+                        ->menu()
+                        ->setMinDepth(0)
+                        ->setMaxDepth(0)
+                        ->setUlClass('nav navbar-nav');
+                    ?>
+                    <?php
+                    echo $this->navigation('header_right')
+                        ->menu()
+                        ->setMinDepth(0)
+                        ->setMaxDepth(0)
+                        ->setUlClass('nav navbar-nav navbar-right');
+                    ?>
+                </div>
             </div>
         </nav>
         <div class="container">

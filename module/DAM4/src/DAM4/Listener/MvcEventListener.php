@@ -71,8 +71,7 @@ class MvcEventListener implements SharedListenerAggregateInterface
      */
     public function noCookieLogout(\Zend\Mvc\MvcEvent $e)
     {
-        if ($e->getRouteMatch()->getMatchedRouteName() == 'legacyrs' ||
-            $e->getRouteMatch()->getMatchedRouteName() == 'wildcard')
+        if ($e->getRouteMatch()->getMatchedRouteName() == 'legacyrs')
         {
             # Check for auth cookie and redirect to logout if it doesn't exist
             if ($e->getRequest()->getCookie()->user === null) {

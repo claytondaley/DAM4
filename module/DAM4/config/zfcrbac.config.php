@@ -47,7 +47,7 @@ return array (
                 'permissions' => ['user'],
             ),
             array (
-                'controller' => 'DAM4\Controller\Redirect',
+                'controller' => 'LegacyRS\Controller\Redirect',
                 'permissions' => ['*'],
             ),
         ),
@@ -55,8 +55,8 @@ return array (
 
     'redirect_strategy' => array(
         'redirect_when_connected'        => false,
-        'redirect_to_route_connected'    => 'home',
-        'redirect_to_route_disconnected' => 'zfcuser/login',
+        'redirect_to_route_connected'    => 'legacyrs',
+        'redirect_to_route_disconnected' => 'hijack-auth',
         'append_previous_uri'            => true,
         'previous_uri_query_key'         => 'redirect'
     ),
