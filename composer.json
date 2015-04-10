@@ -68,6 +68,6 @@
     "piwik/piwik-php-tracker": "dev-master",
     "claytondaley/zend-table": "dev-master",
     "claytondaley/piwiktracker": "dev-master",
-    "claytondaley/legacyrs": "master"
+    "claytondaley/legacyrs": "develop"
   }
 }
