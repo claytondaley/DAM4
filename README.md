@@ -70,7 +70,7 @@ To setup apache, setup a virtual host to point to the public/ directory of the p
 CONFIGURATION
 =============
 
-'''NOTE: DUE TO DEPENDENCIES ON ZfcRbac an ZfcUser THIS PROCESS IS CURRENTLY BROKEN'''
+___NOTE: DUE TO DEPENDENCIES ON ZfcRbac an ZfcUser THIS PROCESS IS CURRENTLY BROKEN___
 
 DAM4 contains a copy of the legacy RS codebase that starts uninitialized.  To maximize forward-compatibility, DAM4 (via LegacyRS) still delegates installation activities to the legacy codebase.  Navigate to the root of this installation and follow the standard RS [installation instructions](http://wiki.resourcespace.org/index.php/Installation).
 
