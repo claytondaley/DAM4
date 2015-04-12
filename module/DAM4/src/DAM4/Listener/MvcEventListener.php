@@ -77,9 +77,8 @@ class MvcEventListener implements SharedListenerAggregateInterface
             if ($e->getRequest()->getCookie()->user === null) {
                 $e->setRouteMatch(
                     new RouteMatch(array(
-                        'controller'    => 'DAM4\Controller\Redirect', // Guards don't currently support FQN
-                        'action'        => 'redirect',
-                        'route'         => 'zfcuser/logout'
+                        'controller'    => 'zfcuser', // Guards don't currently support FQN
+                        'action'         => 'logout'
                     ))
                 );
                 $e->getRouteMatch()->setMatchedRouteName('zfcuser/logout');
