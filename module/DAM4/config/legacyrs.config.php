@@ -20,7 +20,7 @@ return array (
             'ajax'  => false, # Optional, indicates ajax deliver is not permitted
         ),
         'logout' => array (
-            'route' => 'zfcuser/login',
+            'route' => 'zfcuser/logout',
             'ajax'  => false, # Optional, indicates ajax deliver is not permitted
         ),
         'userProfile' => array (
