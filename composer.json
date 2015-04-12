@@ -15,11 +15,11 @@
       "type": "package",
       "package": {
         "name": "resourcespace/resourcespace",
-        "version": "6488",
+        "version": "6513",
         "source": {
           "type": "svn",
           "url": "http://svn.montala.net/svn/",
-          "reference": "resourcespace@6488"
+          "reference": "resourcespace@6513"
         }
       }
     },
