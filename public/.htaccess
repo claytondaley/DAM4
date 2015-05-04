@@ -1,4 +1,8 @@
 RewriteEngine On
+# Next, Require SSL
+SSLOptions +StrictRequire
+SSLRequireSSL
+ErrorDocument 403 "<br>To esnure maximum security for your login information and our assets, you must use a secure connection (HTTPS) to access this webiste.<br><br>Please ensure the URL you used to access this pages starts with 'https://' (without the apostrophes) and not 'http://'"
 # Redirect '/' to index.php
 RewriteRule ^/?$ index.php
 # The following rule tells Apache that if the requested filename
