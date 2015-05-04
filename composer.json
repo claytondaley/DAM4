@@ -53,9 +53,9 @@
   "minimum-stability": "dev",
   "require": {
     "php": ">=5.3.3",
-    "zendframework/zendframework": "dev-table as dev-master",
-    "zf-commons/zfc-user": "dev-table-1.x as 1.x-dev",
-    "danielss89/zfc-user-admin": "dev-table",
+    "zendframework/zendframework": "dev-table as 2.4",
+    "zf-commons/zfc-user": "1.9.*",
+    "danielss89/zfc-user-admin": "1.9.*",
     "zf-commons/zfc-admin": "0.2.*",
     "zf-commons/zfc-rbac": "2.*",
     "zf-commons/zfc-user-doctrine-orm": "1.*",
@@ -63,7 +63,7 @@
     "doctrine/doctrine-orm-module": "0.7.*",
     "vocjunior/doctrine2-nestedset": "*",
     "piwik/piwik-php-tracker": "dev-master",
-    "claytondaley/zend-table": "dev-master",
+    "claytondaley/zend-table": "2.*",
     "claytondaley/piwiktracker": "dev-master",
     "claytondaley/legacyrs": "1.6513.*"
   },
