@@ -50,7 +50,6 @@
       "url": "https://github.com/vocjunior/doctrine2-nestedset"
     }
   ],
-  "minimum-stability": "dev",
   "require": {
     "php": ">=5.3.3",
     "zendframework/zendframework": "dev-table as 2.4",
@@ -61,13 +60,13 @@
     "zf-commons/zfc-user-doctrine-orm": "1.*",
     "doctrine/common": ">=2.1",
     "doctrine/doctrine-orm-module": "0.7.*",
-    "vocjunior/doctrine2-nestedset": "*",
+    "vocjunior/doctrine2-nestedset": "dev-master",
     "piwik/piwik-php-tracker": "dev-master",
     "claytondaley/zend-table": "2.*",
     "claytondaley/piwiktracker": "dev-master",
     "claytondaley/legacyrs": "1.6513.*"
   },
   "require-dev": {
-    "zendframework/zend-developer-tools": "1.*"
+    "zendframework/zend-developer-tools": "*"
   }
 }
