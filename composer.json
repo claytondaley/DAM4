@@ -8,8 +8,6 @@
     "source": "https://github.com/claytondaley/dam4"
   },
   "homepage": "https://github.com/claytondaley/dam4",
-  "minimum-stability": "dev",
-  "prefer-stable": true,
   "repositories": [
     {
       "type": "package",
@@ -52,22 +50,24 @@
       "url": "https://github.com/vocjunior/doctrine2-nestedset"
     }
   ],
+  "minimum-stability": "dev",
   "require": {
     "php": ">=5.3.3",
     "zendframework/zendframework": "dev-table as dev-master",
     "zf-commons/zfc-user": "dev-table-1.x as 1.x-dev",
     "danielss89/zfc-user-admin": "dev-table",
-    "zf-commons/zfc-admin": "dev-master",
-    "zf-commons/zfc-rbac": "dev-master",
-    "zf-commons/zfc-user-doctrine-orm": "dev-master",
+    "zf-commons/zfc-admin": "0.2.*",
+    "zf-commons/zfc-rbac": "2.*",
+    "zf-commons/zfc-user-doctrine-orm": "1.*",
     "doctrine/common": ">=2.1",
     "doctrine/doctrine-orm-module": "0.7.*",
-    "vocjunior/doctrine2-nestedset": "dev-master",
-    "zendframework/zend-developer-tools": "dev-master",
-    "zendframework/zendservice-recaptcha": "dev-master",
+    "vocjunior/doctrine2-nestedset": "*",
     "piwik/piwik-php-tracker": "dev-master",
     "claytondaley/zend-table": "dev-master",
     "claytondaley/piwiktracker": "dev-master",
-    "claytondaley/legacyrs": "develop"
+    "claytondaley/legacyrs": "1.6513.*"
+  },
+  "require-dev": {
+    "zendframework/zend-developer-tools": "1.*"
   }
 }
