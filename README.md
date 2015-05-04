@@ -10,10 +10,8 @@ Initial priorities include:
  - [x] Provide a transparent experience for ResourceSpace despite the ZF2 wrapper layer.
  - [x] Pageview Tracking - Capture legacy page requests as they pass through the Zend layer, getting around limitations in the legacy RS code arising from AJAX calls.  Opportunities for improvement include:
  - [x] Authentication (using ZfcUser) - Bridge Zend\Authentication to the RS codebase so Zend modules can be used for site-wide authentication.
-     - [ ] Upgrade to ZfcUser 2.x branch (blocked by ZfcUserAdmin dependency)
      - [ ] Reset password experience
  - [x] Enhanced Authentication (using ZfcUserAdmin) - Add compatible user admin screens (then hijack legacy URLs)
-     - [ ] Upgrade to support ZfcUser 2.x
  - [x] Branding - Make it easy to brand aspects of the system including the logo, page titles, and other descriptions
      - [x] Ensure branding extends to ZfcUser
      - [x] Ensure branding extends to ZfcUserAdmin
@@ -67,10 +65,11 @@ To setup apache, setup a virtual host to point to the public/ directory of the p
         </Directory>
     </VirtualHost>
     
-CONFIGURATION
+Initial Setup
 =============
 
-___NOTE: DUE TO DEPENDENCIES ON ZfcRbac an ZfcUser THIS PROCESS IS CURRENTLY BROKEN___
+___NOTE: DAM4 is does not have a full installation script yet.  You need to have an existing RS database and follow the instructions in the Migration section.___
+
 
 DAM4 contains a copy of the legacy RS codebase that starts uninitialized.  To maximize forward-compatibility, DAM4 (via LegacyRS) still delegates installation activities to the legacy codebase.  Navigate to the root of this installation and follow the standard RS [installation instructions](http://wiki.resourcespace.org/index.php/Installation).
 
@@ -78,6 +77,27 @@ Once you've installed the program, open `/vendor/resourcespace/resourcespace/inc
 
 This same `config.php` file can be used to extensively customize the behavior of RS.  See the `corporate.config.php` discussion in the next section for some additional information.  
 
+Migration
+=========
+
+To convert an existing RS installation to DAM4, (at least) the following is required:
+
+ - Install DAM4 using the Installation instructions
+ - Copy your old config.php file to `/vendor/resourcespace/resourcespace/include` (the usual place in the RS file structure)
+     - Optionally, following the LegacyRS instructions to delegate configuration to ZF2 config files
+ - Tweak your RS database (should be transparent to RS)
+     - Extend the `password` column on the `user` table to 128 characters
+     - Add `user` to the comma delineated list of permissions for all Usergroups (which function as roles in ZF2)
+     - Add a `guest` role to the Usergroup table with `id = -1`, `name = "guest"`, and `permissions = "guest"`
+     - Create a migration user with the username `migration`, password `$2y$14$ebUdtjNPldKbkVlBi94GvOyZ5bjckOQ3GKKX0ED8Ow1M8xHyvjJO2`, and super-user usergroup (`3` in installation).
+
+The biggest problem with migration presently is that DAM4 does not yet have a password migration strategy.  
+
+ - The `migration` user you created starts with the password `password`.
+ - You should log into this user update the password ***immediately***.
+ - This user can be used to update/reset passwords for other users.  This can be accessed using RS menus (Team Center - User Management) or by going to `/admin/user/list`
+ - Obviously, this extra hassle will go away once a password reset option is provided, but currently limits rollback (except that you can reset your password again).
+ 
 ZF2 CONFIG
 ==========
 
@@ -89,3 +109,4 @@ You have the option to use ZF2 to manage some ResourcSpace configurations.  This
  - Update the configuration inside `legacyrs.logcal.php`
 
 The LegacyRS module includes a sample configuration for a corporate (hybrid internal-external) DAM deployment (`corporate.config.php`). This file would replace `legacy.config.php` in this configuration.
+
