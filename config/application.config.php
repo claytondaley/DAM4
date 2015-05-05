@@ -17,6 +17,9 @@ return array(
         'ZfcBase',
         'ZfcUser',
         'ZfcUserDoctrineORM',
+        'GoalioMailService',
+        'GoalioForgotPassword',
+        'GoalioForgotPasswordDoctrineORM',
         # User adminstration in ZfcAdmin
         'ZfcAdmin',
         'ZfcUserAdmin',

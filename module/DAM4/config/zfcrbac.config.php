@@ -37,6 +37,11 @@ return array (
                 'controller' => 'zfcuser',
                 'permissions' => ['*'],
             ),
+            // enable forgot password page for guests
+            array (
+                'controller' => 'goalioforgotpassword_forgot',
+                'permissions' => ['*'],
+            ),
             // this should be redirected not unauthorized
             array (
                 'controller' => 'LegacyRS\Controller\LegacyRS',

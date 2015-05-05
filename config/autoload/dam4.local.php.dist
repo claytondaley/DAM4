@@ -1,0 +1,128 @@
+<?php
+/**
+ * Copyright (C) 2014-2015 Clayton Daley III
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/**
+ * BASIC CONFIGURATION
+ */
+$email_from = "assets@ambsw.com";
+$email_name = "Ambassador Software Works Asset Repository";
+
+$db_server      = "localhost";
+$db_port        = "3306";
+$db_username    = "root";
+$db_password    = "password";
+$db_database    = "database";
+
+/**
+ * ADVANCED CONFIGURATION
+ */
+return array (
+    /**
+     * Goalio Mail Service
+     *
+     * This section manages mail delivery for password reset emails
+     */
+    'goaliomailservice' => array(
+        /**
+         * Transport Class
+         *
+         * Name of Zend Transport Class to use
+         */
+        'transport_class' => 'Zend\Mail\Transport\Sendmail',
+
+        'options_class' => null,
+
+        'transport_options' => array(),
+
+        /**
+         * End of GoalioMailService configuration
+         */
+    ),
+
+    /**
+     * Goalio Forgot Password
+     *
+     * This section manages the details of forgot password emails
+     */
+    'goalioforgotpassword' => array(
+        /**
+         * Email Address that will appear in the 'From' of outbound emails
+         *
+         * Default: empty
+         */
+        'email_from_address' => array(
+            'email' => $email_from,
+            'name' => $email_name,
+        ),
+
+        /**
+         * Subject line used in the email
+         */
+        'reset_email_subject_line' => "You requested to reset your password for $email_name"
+    ),
+
+    /**
+     * LegacyRS
+     *
+     * This section only works if you have configured your RS installation to delegate settings management to DAM4. See
+     * the LegacyRS README for more information on how this can be done.
+     */
+    'LegacyRS' => array(
+        'config' => array(
+            # DB Configurations
+            "mysql_server" => $db_server,
+            "mysql_username" => $db_username,
+            "mysql_password" => $db_password,
+            "mysql_db" => $db_database,
+
+            # Application Settings
+            'baseurl' => "https://asset.ambsw.com",
+            'applicationname' => "Digital Asset Management 4 Ambassador Software Works", # Https recommended
+            'defaultlanguage' => 'en-US', # default language, uses ISO 639-1 language codes ( en, es etc.)
+            'header_favicon' => "/img/favicon.ico",
+            'slimheader' => true,
+            'linkedheaderimgsrc' => "/img/logo.png", # Custom logo only available on slimheader
+
+            # Email addresses
+            'email_from' => $email_from,
+            'email_notify' => $email_from,
+            'email_errors_address' => $email_from,
+        ),
+    ),
+
+    /**
+     * DO NOT CHANGE
+     *
+     * All following configurations are static or managed by variables provided above
+     */
+
+    'doctrine' => array(
+        'connection' => array(
+            'orm_default' => array(
+                'driverClass' =>'Doctrine\DBAL\Driver\PDOMySql\Driver',
+                'params' => array(
+                    'host'     => $db_server,
+                    'port'     => $db_port,
+                    'user'     => $db_username,
+                    'password' => $db_password,
+                    'dbname'   => $db_database,
+                )
+            )
+        )
+    )
+);
