@@ -47,6 +47,10 @@
     },
     {
       "type": "vcs",
+      "url": "https://github.com/claytondaley/GoalioMailService"
+    },
+    {
+      "type": "vcs",
       "url": "https://github.com/vocjunior/doctrine2-nestedset"
     }
   ],

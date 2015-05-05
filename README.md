@@ -32,6 +32,13 @@ Aquiring all of the DAM4 dependencies is now fully managed by composer!
     curl -s https://getcomposer.org/installer | php --
     php composer.phar install
 
+Basic DAM4 settings should be configured:
+
+    # Rename the config file to create a local version
+    cp config/autoload/dam4.local.php.dist config/autoload/dam4.local.php
+    # Modify the config file  
+    
+
 Web Server Setup
 ----------------
 
