@@ -50,6 +50,7 @@
       "url": "https://github.com/vocjunior/doctrine2-nestedset"
     }
   ],
+  "minimum-stability": "dev",
   "require": {
     "php": ">=5.3.3",
     "zendframework/zendframework": "dev-table as 2.4",
