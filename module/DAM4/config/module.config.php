@@ -38,7 +38,7 @@ return array(
         ),
         'delegators' => array(
             'Doctrine\ORM\EntityManager' => array(
-                'DAM4\Delegator\ZfcUserAdminCreateForm',
+                'DAM4\Delegator\DenyAll',
             ),
         ),
         'factories' => array(
