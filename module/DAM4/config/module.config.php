@@ -48,6 +48,7 @@ return array(
             'DAM4\Listener\RbacNavigation' => 'DAM4\Factory\Listener\RbacNavigation',
         ),
         'invokables' => array(
+            'DAM4\Doctrine\Fitler\DenyAll'                  => 'DAM4\Doctrine\Fitler\DenyAll',
             'DAM4\Listener\ZfcUserListener'                 => 'DAM4\Listener\ZfcUserListener',
             'DAM4\Listener\MvcEventListener'                => 'DAM4\Listener\MvcEventListener',
             'DAM4\Hydrator\Strategy\DateTimeStrategy'       => 'DAM4\Hydrator\Strategy\DateTimeStrategy',
