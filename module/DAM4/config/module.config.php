@@ -36,6 +36,11 @@ return array(
             'translator' => 'MvcTranslator',
             'Zend\Authentication\AuthenticationService' => 'zfcuser_auth_service'
         ),
+        'delegators' => array(
+            'Doctrine\ORM\EntityManager' => array(
+                'DAM4\Delegator\ZfcUserAdminCreateForm',
+            ),
+        ),
         'factories' => array(
             'header_left' => 'DAM4\Navigation\LeftMenuFactory',
             'header_right' => 'DAM4\Navigation\RightMenuFactory',
