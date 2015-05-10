@@ -29,5 +29,6 @@ class DenyAll implements DelegatorFactoryInterface
     {
         $em = $callback();
         $em->getFilters()->enable('denyall');
+        return $em;
     }
 }
