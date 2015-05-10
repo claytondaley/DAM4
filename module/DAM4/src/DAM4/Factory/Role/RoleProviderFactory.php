@@ -17,9 +17,9 @@ class RoleProviderFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         $roleProvider = new RoleProvider;
-        $roleProvider->setEntityManager(
-            $serviceLocator->get('doctrine.entitymanager.orm_default')
-        );
+        $em = $serviceLocator->get('doctrine.entitymanager.orm_default');
+        $em->getFilter('denyall')->addExclusion('LegacyRS\Entity\Usergroup');
+        $roleProvider->setEntityManager($em);
 
         return $roleProvider;
     }
