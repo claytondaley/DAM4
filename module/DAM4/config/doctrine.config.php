@@ -23,7 +23,10 @@ return array(
         'orm_default' => array(
             'types' => array(
                 'timestamp' => 'DAM4/Type/TimestampType',
-            )
+            ),
+            'filters'  =>  array(
+                'denyall' => 'DAM4\Doctrine\Fitler\DenyAll'
+            ),
         )
-    )
+    ),
 );

@@ -19,8 +19,8 @@
 /**
  * BASIC CONFIGURATION
  */
-$email_from = "assets@ambsw.com";
-$email_name = "Ambassador Software Works Asset Repository";
+$email_from = "bad-config@dam4.yourcompany.com";
+$email_name = "DAM4 Asset Repository";
 
 $db_server      = "localhost";
 $db_port        = "3306";
@@ -32,6 +32,17 @@ $db_database    = "database";
  * ADVANCED CONFIGURATION
  */
 return array (
+
+    /**
+     * Authentication is now controlled by ZfcUser
+     */
+    'zfcuser' => array(
+        /**
+         * Allows (or prohibits) self-registration of new users
+         */
+        'enable_registration' => true,
+    ),
+
     /**
      * Goalio Mail Service
      *
@@ -92,7 +103,7 @@ return array (
 
             # Application Settings
             'baseurl' => "https://asset.ambsw.com",
-            'applicationname' => "Digital Asset Management 4 Ambassador Software Works", # Https recommended
+            'applicationname' => "Digital Asset Management 4 Asset Repository", # Https recommended
             'defaultlanguage' => 'en-US', # default language, uses ISO 639-1 language codes ( en, es etc.)
             'header_favicon' => "/img/favicon.ico",
             'slimheader' => true,
@@ -108,7 +119,7 @@ return array (
     /**
      * DO NOT CHANGE
      *
-     * All following configurations are static or managed by variables provided above
+     * All following configurations are required by DAM4 or managed by variables provided above
      */
 
     'doctrine' => array(

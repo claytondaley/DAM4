@@ -1,12 +1,9 @@
 <?php
 /**
- * DhCommon
- *
- * @copyright  Copyright 2009-2014 David Havl
- * @license    MIT , http://davidhavl.com/license/MIT
- * @link       http://davidhavl.com
- * @author     David Havl <contact@davidhavl.com>
+ * Created by PhpStorm.
+ * User: Clayton Daley
  */
+
 namespace DAM4\Hydrator\Strategy;
 
 use DateTime;
