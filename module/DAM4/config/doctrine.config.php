@@ -25,7 +25,7 @@ return array(
                 'timestamp' => 'DAM4/Type/TimestampType',
             ),
             'filters'  =>  array(
-                'denyall' => 'DAM4\Doctrine\Fitler\DenyAll'
+                'denyall' => 'DAM4\Doctrine\Filter\DenyAll'
             ),
         )
     ),
