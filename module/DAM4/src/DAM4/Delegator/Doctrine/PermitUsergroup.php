@@ -28,7 +28,7 @@ class PermitUsergroup implements DelegatorFactoryInterface
      */
     public function createDelegatorWithName(ServiceLocatorInterface $serviceLocator, $name, $requestedName, $callback)
     {
-        if (!$serviceLocator instanceof ServiceManager) {
+        if (method_exists($serviceLocator, 'getServiceLocator')) {
             $serviceLocator = $serviceLocator->getServiceLocator();
         }
 
