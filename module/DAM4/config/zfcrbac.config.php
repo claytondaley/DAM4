@@ -11,11 +11,13 @@ use ZfcRbac\Guard\GuardInterface;
 return array (
     'protection_policy' => GuardInterface::POLICY_DENY,
     'guest_role' => '-1',
+    'role_provider_manager' => array(
+        'factories' => array(
+            'DAM4\Role\RoleProvider' => 'DAM4\Factory\Role\RoleProvider'
+        ),
+    ),
     'role_provider' => array(
-        'ZfcRbac\Role\ObjectRepositoryRoleProvider' => array(
-            'object_manager'     => 'doctrine.entitymanager.orm_default',
-            'class_name'         => 'LegacyRS\Entity\Usergroup',
-            'role_name_property' => 'id',
+        'DAM4\Role\RoleProvider' => array(
         ),
     ),
     'guards' => array (
