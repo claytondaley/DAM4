@@ -6,7 +6,7 @@
  * Time: 4:23 PM
  */
 
-namespace DAM4\Role\Factory;
+namespace DAM4\Factory\Role;
 
 use DAM4\Role;
 use Zend\ServiceManager\FactoryInterface;
