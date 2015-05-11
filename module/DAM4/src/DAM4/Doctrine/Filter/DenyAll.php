@@ -27,7 +27,7 @@ class DenyAll extends SQLFilter
     }
 
     /**
-     * @param string $targetEntity The entity to be included in the filter
+     * @param string $targetEntity The entity to be (re)included in the filter
      */
     public function dropExclusion($targetEntity)
     {
@@ -45,7 +45,7 @@ class DenyAll extends SQLFilter
     public function addFilterConstraint(ClassMetadata $targetEntity, $targetTableAlias)
     {
         # By returning 'WHERE true', we allow access to the table
-        if (in_array($targetEntity, $this->excluded)) {
+        if (in_array($targetEntity->reflClass->getName(), $this->excluded)) {
             return '';
         }
 

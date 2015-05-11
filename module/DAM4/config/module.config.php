@@ -38,7 +38,10 @@ return array(
         ),
         'delegators' => array(
             'doctrine.entitymanager.orm_default' => array(
-                'DAM4\Delegator\DenyAll',
+                'DAM4\Delegator\Doctrine\DenyAll',
+            ),
+            'ZfcRbac/Role/ObjectRepositoryRoleProvider' => array(
+                'DAM4\Delegator\Doctrine\PermitUsergroup',
             ),
         ),
         'factories' => array(

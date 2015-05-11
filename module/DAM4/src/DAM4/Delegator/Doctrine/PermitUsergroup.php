@@ -3,16 +3,16 @@
  * Created by PhpStorm.
  * User: Clayton Daley
  * Date: 5/10/2015
- * Time: 10:30 AM
+ * Time: 7:58 PM
  */
 
-namespace DAM4\Delegator;
+namespace DAM4\Delegator\Doctrine;
 
 
 use Zend\ServiceManager\DelegatorFactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class DenyAll implements DelegatorFactoryInterface
+class PermitUsergroup implements DelegatorFactoryInterface
 {
 
     /**
@@ -27,8 +27,11 @@ class DenyAll implements DelegatorFactoryInterface
      */
     public function createDelegatorWithName(ServiceLocatorInterface $serviceLocator, $name, $requestedName, $callback)
     {
-        $em = $callback();
-        $em->getFilters()->enable('denyall');
-        return $em;
+        $em = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        $em->getFilter('denyall')->addExclusion('LegacyRS\Entity\Usergroup');
+        $object = $callback();
+        $em->getFilter('denyall')->dropExclusion('LegacyRS\Entity\Usergroup');
+
+        return $object;
     }
 }
