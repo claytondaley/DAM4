@@ -9,9 +9,9 @@
 namespace DAM4\Delegator\Doctrine;
 
 
+use Doctrine\ORM\EntityManager;
 use Zend\ServiceManager\DelegatorFactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
-use Zend\ServiceManager\ServiceManager;
 
 class PermitUsergroup implements DelegatorFactoryInterface
 {
@@ -32,8 +32,9 @@ class PermitUsergroup implements DelegatorFactoryInterface
             $serviceLocator = $serviceLocator->getServiceLocator();
         }
 
-        $em = $serviceLocator->get('doctrine.entitymanager.orm_default');
-        $em->getFilter('denyall')->addExclusion('LegacyRS\Entity\Usergroup');
+        /** @var EntityManager $em */
+        $em = $serviceLocator->get('Doctrine\ORM\EntityManager');
+        $em->getFilters->getFilter('denyall')->addExclusion('LegacyRS\Entity\Usergroup');
         $object = $callback();
 
         return $object;
