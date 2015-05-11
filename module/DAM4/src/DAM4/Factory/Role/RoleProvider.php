@@ -8,15 +8,15 @@
 
 namespace DAM4\Role\Factory;
 
-use DAM4\Role\RoleProvider;
+use DAM4\Role;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
-class RoleProviderFactory implements FactoryInterface
+class RoleProvider implements FactoryInterface
 {
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        $roleProvider = new RoleProvider;
+        $roleProvider = new Role\RoleProvider;
         $roleProvider->setEntityManager(
             $serviceLocator->get('doctrine.entitymanager.orm_default')
         );
