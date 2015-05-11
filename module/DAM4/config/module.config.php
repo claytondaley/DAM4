@@ -37,7 +37,7 @@ return array(
             'Zend\Authentication\AuthenticationService' => 'zfcuser_auth_service'
         ),
         'delegators' => array(
-            'Doctrine\ORM\EntityManager' => array(
+            'doctrine.entitymanager.orm_default' => array(
                 'DAM4\Delegator\Doctrine\DenyAll',
             ),
         ),
