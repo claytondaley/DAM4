@@ -47,7 +47,6 @@ return array(
         'factories' => array(
             'header_left' => 'DAM4\Navigation\LeftMenuFactory',
             'header_right' => 'DAM4\Navigation\RightMenuFactory',
-            'DAM4\Role\RoleProvider' => 'DAM4\Factory\Role\RoleProvider',
             'DAM4\Listener\RbacNavigation' => 'DAM4\Factory\Listener\RbacNavigation',
         ),
         'invokables' => array(

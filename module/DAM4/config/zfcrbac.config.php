@@ -11,6 +11,11 @@ use ZfcRbac\Guard\GuardInterface;
 return array (
     'protection_policy' => GuardInterface::POLICY_DENY,
     'guest_role' => '-1',
+    'role_provider_manager' => array(
+        'factories' => array(
+            'DAM4\Role\RoleProvider' => 'DAM4\Factory\Role\RoleProvider'
+        ),
+    ),
     'role_provider' => array(
         'DAM4\Role\RoleProvider' => array(
         ),
