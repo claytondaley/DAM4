@@ -8,7 +8,7 @@
 
 namespace DAM4\Delegator\Doctrine;
 
-
+use Doctrine\ORM\EntityManager;
 use Zend\ServiceManager\DelegatorFactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
@@ -27,6 +27,7 @@ class DenyAll implements DelegatorFactoryInterface
      */
     public function createDelegatorWithName(ServiceLocatorInterface $serviceLocator, $name, $requestedName, $callback)
     {
+        /** @var EntityManager $em */
         $em = $callback();
         $em->getFilters()->enable('denyall');
         return $em;
