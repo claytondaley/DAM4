@@ -49,6 +49,11 @@ class DenyAll extends SQLFilter
             return '';
         }
 
+        # In general, we need to relax our settings if we've reached this point so it's useful to leave an
+        # easy-to-enable debugging function at this point
+        die("blocking call for " . $targetEntity->reflClass->getName() . " at \n" .
+            print_r(debug_backtrace(DEBUG_BACKTRACE_IGNORE_ARGS),true));
+
         # By including `WHERE false`, we blocks access to all rows in the Doctrine tables
         return 'false';
     }
