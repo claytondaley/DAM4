@@ -30,7 +30,6 @@ class PermitUsergroup implements DelegatorFactoryInterface
         $em = $serviceLocator->get('Doctrine\ORM\EntityManager');
         $em->getFilter('denyall')->addExclusion('LegacyRS\Entity\Usergroup');
         $object = $callback();
-        $em->getFilter('denyall')->dropExclusion('LegacyRS\Entity\Usergroup');
 
         return $object;
     }
