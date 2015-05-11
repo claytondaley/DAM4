@@ -40,9 +40,6 @@ return array(
             'doctrine.entitymanager.orm_default' => array(
                 'DAM4\Delegator\Doctrine\DenyAll',
             ),
-            'DAM4\Role\RoleProvider' => array(
-                'DAM4\Delegator\Doctrine\PermitUsergroup',
-            ),
         ),
         'factories' => array(
             'header_left' => 'DAM4\Navigation\LeftMenuFactory',

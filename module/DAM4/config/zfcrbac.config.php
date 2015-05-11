@@ -15,6 +15,11 @@ return array (
         'factories' => array(
             'DAM4\Role\RoleProvider' => 'DAM4\Factory\Role\RoleProvider'
         ),
+        'delegators' => array(
+            'DAM4\Role\RoleProvider' => array(
+                'DAM4\Delegator\Doctrine\PermitUsergroup',
+            ),
+        ),
     ),
     'role_provider' => array(
         'DAM4\Role\RoleProvider' => array(
